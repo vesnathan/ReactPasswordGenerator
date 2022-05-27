@@ -15,17 +15,21 @@ https://nodejs.org/en/download/
   
 install the following dependencies (run the foolowing commands in terminal)  
   
- ------  https://mui.com/material-ui/react-typography/#general  
-npm install @fontsource/roboto  
-import '@fontsource/roboto/300.css';  
-import '@fontsource/roboto/400.css';  
-import '@fontsource/roboto/500.css';  
-import '@fontsource/roboto/700.css';  
-  
 ------  https://mui.com/material-ui/icons/#font-icons  
 npm install @mui/material @emotion/react @emotion/styled  
 npm install @mui/icons-material  
 npm install @material-ui/core  
+
+ ------  https://mui.com/material-ui/react-typography/#general  
+Material UI is designed with the Roboto font in mind. To use this font, run this command in terminal:  
+  
+npm install @fontsource/roboto  
+  
+And import these fonts at the start of your app.js  
+import '@fontsource/roboto/300.css';  
+import '@fontsource/roboto/400.css';  
+import '@fontsource/roboto/500.css';  
+import '@fontsource/roboto/700.css';  
   
     
 
