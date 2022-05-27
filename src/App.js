@@ -49,8 +49,8 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [charSetsSelected, setCharSetsSelected] = useState(4);
   const [generatedPassword, setGeneratedPassword] = useState("");
+  const [generatedPaswordDisplayClassName, setGeneratedPaswordDisplayClassName] = useState("");
 
-  console.log("charSetsSelected start: ", charSetsSelected);
 
   useEffect(() => {     
       if (charSetsSelected < 2) {
@@ -122,11 +122,11 @@ function App() {
                   {
                     generatedPassword !== "" &&
                     <>
-                    <div id="generatedPaswordDisplay">{generatedPassword}</div>
+                    <div id="generatedPaswordDisplay" className={generatedPaswordDisplayClassName}>{generatedPassword}</div>
                     <FormGroup>
                         < Button id="generatePasswordButton" variant="contained" sx={{mt: 5}} color="primary" onClick={() => setGeneratedPassword(generatePassword(useUpperCharacters,useLowerCharacters,useSpecialCharacters,useNumericCharacters,passwordLength))}>GENERATE AGAIN</Button>
                         < Button id="resetButton" variant="contained" sx={{mt: 1}} color="primary" onClick={() => setGeneratedPassword("")}>RESET</Button>
-                        < Button id="copyButton" variant="contained" sx={{mt: 1}} color="primary" onClick={() => {navigator.clipboard.writeText(generatedPassword)}}>COPY</Button>
+                        < Button id="copyButton" variant="contained" sx={{mt: 1}} color="primary" onClick={() => {navigator.clipboard.writeText(generatedPassword); setGeneratedPaswordDisplayClassName("greyedOut"); setTimeout(() => setGeneratedPaswordDisplayClassName(""), 1000)}}>COPY</Button>
                     </FormGroup>
                     </>
                   }

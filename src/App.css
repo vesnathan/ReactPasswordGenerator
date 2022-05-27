@@ -7,3 +7,6 @@
 #generatedPaswordDisplay {
   word-break: break-all;
 }
+.greyedOut {
+  color:rgb(176, 176, 176);
+}
