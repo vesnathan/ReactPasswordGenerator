@@ -1,5 +1,35 @@
 # Getting Started with Create React App
 
+
+
+
+ ------  https://mui.com/material-ui/react-typography/#general
+npm install @fontsource/roboto
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+------  https://mui.com/material-ui/icons/#font-icons
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+npm install @material-ui/core
+
+------  React Components
+https://mui.com/material-ui/react-button/
+https://mui.com/material-ui/react-checkbox/
+https://mui.com/material-ui/react-grid/
+https://mui.com/material-ui/react-container/
+
+
+
+MATERIAL UI BREAKPOINTS FOR REFERENCE
+    xs, extra-small: 0px.
+    sm, small: 600px.
+    md, medium: 900px.
+    lg, large: 1200px.
+    xl, extra-large: 1536px.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
