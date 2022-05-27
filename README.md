@@ -50,7 +50,8 @@ npm install @material-ui/core
 
 ## Features
     Static one page website  
-    generates a password of chosen length using selected character sets. Copy button to copy generated password to clipboard.  
+    generates a password of chosen length using selected character sets.  
+    Copy button to copy generated password to clipboard.  
 
 ## Configuration
 
