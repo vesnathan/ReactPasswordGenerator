@@ -6,7 +6,9 @@
 ## Screenshot
 
     ./static/images/screenshot/Capture.png  
-    <img src="./static/images/screenshot/Capture.png " />
+
+
+<img src="./static/images/screenshot/Capture.png " />
 
 ## Installing / Getting started
   
