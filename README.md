@@ -1,7 +1,24 @@
-# Getting Started with Create React App
+## PASSWORG GENERATOR
 
 
 
+
+
+
+## Description
+    This is a portfolio page showcasing some of my past projects. It include contact information.
+
+## Screenshot
+
+./assets/images/screenshot/Capture.png
+
+## Installing / Getting started
+
+install node.js
+https://nodejs.org/en/download/
+
+
+install the following dependencies (run the foolowing commands in terminal)
 
  ------  https://mui.com/material-ui/react-typography/#general
 npm install @fontsource/roboto
@@ -15,6 +32,52 @@ npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
 npm install @material-ui/core
 
+    
+
+
+## Initial Configuration
+
+    None
+
+## Developing
+
+    To download this repo for further dev, simply create and enter a folder on your local machine 
+    and run the following command in bash terminal:
+    git clone https://github.com/vesnathan/ReactPasswordGenerator
+
+
+## Building
+    run "npm run build" from terminal
+
+## Deploying / Publishing
+
+    Upload contents of build directory to active webserver
+
+## Features
+    Static one page website
+    generates a password of chosen length using selected character sets. Copy button to copy generated password to clipboard.
+
+## Configuration
+
+    none
+
+## Contributing
+
+    This is a private site, no contributions accepted.
+
+## Links
+
+    Project homepage: https://vesnathan.github.io/ReactPasswordGenerator/
+    Repository: https://github.com/vesnathan/ReactPasswordGenerator
+
+    DevServer: https://52.65.110.85/reactpasswordgenerator/
+        This server has a self signed certificate that is not trusted by browsers.
+
+## Licensing
+
+    Copyright. Do not use code without permission of the copyright holder.
+
+## For Reference
 ------  React Components
 https://mui.com/material-ui/react-button/
 https://mui.com/material-ui/react-checkbox/
@@ -23,79 +86,10 @@ https://mui.com/material-ui/react-container/
 
 
 
-MATERIAL UI BREAKPOINTS FOR REFERENCE
+
 Breakpoint Key 	Window Size
 xs 	            0-599 px
 sm 	            600px – 959px
 md 	            960px – 1279px
 lg 	            1280 – 1919px
 xl 	            1920px+
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
