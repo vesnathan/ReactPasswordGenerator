@@ -24,11 +24,12 @@ https://mui.com/material-ui/react-container/
 
 
 MATERIAL UI BREAKPOINTS FOR REFERENCE
-    xs, extra-small: 0px.
-    sm, small: 600px.
-    md, medium: 900px.
-    lg, large: 1200px.
-    xl, extra-large: 1536px.
+Breakpoint Key 	Window Size
+xs 	            0-599 px
+sm 	            600px – 959px
+md 	            960px – 1279px
+lg 	            1280 – 1919px
+xl 	            1920px+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -103,12 +103,12 @@ function App() {
                     generatedPassword === "" &&
                 
                     <FormGroup>
-                        <Typography gutterBottom>Password Length:</Typography>
+                        <Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}} gutterBottom>Password Length:</Typography>
                         <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" onChange={handleSliderChange} min={8} max={128} sx={{mb: 5}} />
-                        <FormControlLabel control={<Checkbox defaultChecked id="useUpperCharacters"   onChange={handleCheckboxChange}/>} label="Use Upper Case Characters" />
-                        <FormControlLabel control={<Checkbox defaultChecked id="useLowerCharacters"   onChange={handleCheckboxChange}/>} label="Use Lower Case Characters" />
-                        <FormControlLabel control={<Checkbox defaultChecked id="useSpecialCharacters" onChange={handleCheckboxChange}/>} label="Use Special Characters" />
-                        <FormControlLabel control={<Checkbox defaultChecked id="useNumericCharacters" onChange={handleCheckboxChange}/>} label="Use Numeric Characters" />
+                        <FormControlLabel control={<Checkbox defaultChecked id="useUpperCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}}>Use Upper Characters</Typography>}/>
+                        <FormControlLabel control={<Checkbox defaultChecked id="useLowerCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}}>Use Lower Case Characters</Typography>}/>
+                        <FormControlLabel control={<Checkbox defaultChecked id="useSpecialCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}}>Use Special Charaxters</Typography>}/>
+                        <FormControlLabel control={<Checkbox defaultChecked id="useNumericCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}}>Use Numeric Characters</Typography>}/>
                         {
                         !errorStatus &&
                         < Button id="generatePasswordButton" variant="contained" sx={{mt: 5}} color="primary" onClick={() => setGeneratedPassword(generatePassword(useUpperCharacters,useLowerCharacters,useSpecialCharacters,useNumericCharacters,passwordLength))}>GENERATE PASSWORD</Button>
