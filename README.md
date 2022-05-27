@@ -73,18 +73,15 @@ npm install @material-ui/core
     Copyright. Do not use code without permission of the copyright holder.  
 
 ## For Reference
-------  React Components
+------  React Components  
 https://mui.com/material-ui/react-button/  
 https://mui.com/material-ui/react-checkbox/  
 https://mui.com/material-ui/react-grid/  
 https://mui.com/material-ui/react-container/  
 
 
-
-
-Breakpoint Key 	Window Size  
-xs 	            0-599 px  
-sm 	            600px – 959px  
-md 	            960px – 1279px  
-lg 	            1280 – 1919px  
-xl 	            1920px+  
+xs: 0-599 px  
+sm: 600px – 959px  
+md: 960px – 1279px  
+lg: 1280 – 1919px  
+xl: 1920px+  
