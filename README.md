@@ -4,11 +4,10 @@
     This is a password generation app built with react  
 
 ## Screenshot
-
-    ./static/images/screenshot/Capture.png  
-
-
+  
 <img src="./public/Capture.png " />
+  
+<img src="./public/Capture2.png " />  
 
 ## Installing / Getting started
   
