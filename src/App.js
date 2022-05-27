@@ -93,22 +93,22 @@ function App() {
         <Container maxWidth="sm" className="mainContainer">
           <Grid container  > 
             <Grid container justifyContent="center">
-              <Grid item  xs={8} >
+              <Grid item  xs={10} sm={8} >
                 <Header titleText="PASSWORD GENERATOR" />
               </Grid>
             </Grid>
             <Grid container justifyContent="center">
-              <Grid item  xs={8} >
+              <Grid item  xs={10} sm={8}>
                   {
                     generatedPassword === "" &&
                 
                     <FormGroup>
-                        <Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}} gutterBottom>Password Length:</Typography>
-                        <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" onChange={handleSliderChange} min={8} max={128} sx={{mb: 5}} />
-                        <FormControlLabel control={<Checkbox defaultChecked id="useUpperCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}}>Use Upper Characters</Typography>}/>
-                        <FormControlLabel control={<Checkbox defaultChecked id="useLowerCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}}>Use Lower Case Characters</Typography>}/>
-                        <FormControlLabel control={<Checkbox defaultChecked id="useSpecialCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}}>Use Special Charaxters</Typography>}/>
-                        <FormControlLabel control={<Checkbox defaultChecked id="useNumericCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}}>Use Numeric Characters</Typography>}/>
+                        <Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}} gutterBottom>Password Length: {passwordLength}</Typography>
+                        <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="off" onChange={handleSliderChange} min={8} max={128} sx={{mb: 5}} />
+                        <FormControlLabel control={<Checkbox defaultChecked id="useUpperCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Upper Case Characters</Typography>}/>
+                        <FormControlLabel control={<Checkbox defaultChecked id="useLowerCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Lower Case Characters</Typography>}/>
+                        <FormControlLabel control={<Checkbox defaultChecked id="useSpecialCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Special Case Charaxters</Typography>}/>
+                        <FormControlLabel control={<Checkbox defaultChecked id="useNumericCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Numeric Case Characters</Typography>}/>
                         {
                         !errorStatus &&
                         < Button id="generatePasswordButton" variant="contained" sx={{mt: 5}} color="primary" onClick={() => setGeneratedPassword(generatePassword(useUpperCharacters,useLowerCharacters,useSpecialCharacters,useNumericCharacters,passwordLength))}>GENERATE PASSWORD</Button>
