@@ -1,16 +1,11 @@
 ## PASSWORG GENERATOR
 
-
-
-
-
-
 ## Description
-    This is a portfolio page showcasing some of my past projects. It include contact information.
+    This is a password generation app built with react
 
 ## Screenshot
 
-./assets/images/screenshot/Capture.png
+./static/images/screenshot/Capture.png
 
 ## Installing / Getting started
 
