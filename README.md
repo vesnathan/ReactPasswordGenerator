@@ -8,7 +8,7 @@
     ./static/images/screenshot/Capture.png  
 
 
-<img src="./static/images/screenshot/Capture.png " />
+<img src="./public/Capture.png " />
 
 ## Installing / Getting started
   
