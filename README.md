@@ -1,4 +1,4 @@
-## PASSWORG GENERATOR
+## PASSWORD GENERATOR
 
 ## Description
     This is a password generation app built with react
