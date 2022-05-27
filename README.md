@@ -5,31 +5,31 @@
 
 ## Screenshot
 
-./static/images/screenshot/Capture.png  
+    ./static/images/screenshot/Capture.png  
 
 ## Installing / Getting started
   
-install node.js  
-https://nodejs.org/en/download/  
-  
-  
-install the following dependencies (run the foolowing commands in terminal)  
-  
-------  https://mui.com/material-ui/icons/#font-icons  
-npm install @mui/material @emotion/react @emotion/styled  
-npm install @mui/icons-material  
-npm install @material-ui/core  
+    install node.js  
+    https://nodejs.org/en/download/  
+    
+    
+    install the following dependencies (run the foolowing commands in terminal)  
+    
+    ------  https://mui.com/material-ui/icons/#font-icons  
+    npm install @mui/material @emotion/react @emotion/styled  
+    npm install @mui/icons-material  
+    npm install @material-ui/core  
 
- ------  https://mui.com/material-ui/react-typography/#general  
-Material UI is designed with the Roboto font in mind. To use this font, run this command in terminal:  
-  
-npm install @fontsource/roboto  
-  
-And import these fonts at the start of your app.js  
-import '@fontsource/roboto/300.css';  
-import '@fontsource/roboto/400.css';  
-import '@fontsource/roboto/500.css';  
-import '@fontsource/roboto/700.css';  
+    ------  https://mui.com/material-ui/react-typography/#general  
+    Material UI is designed with the Roboto font in mind. To use this font, run this command in terminal:  
+    
+    npm install @fontsource/roboto  
+    
+    And import these fonts at the start of your app.js  
+    import '@fontsource/roboto/300.css';  
+    import '@fontsource/roboto/400.css';  
+    import '@fontsource/roboto/500.css';  
+    import '@fontsource/roboto/700.css';  
   
     
 
@@ -78,15 +78,15 @@ import '@fontsource/roboto/700.css';
     Copyright. Do not use code without permission of the copyright holder.  
 
 ## For Reference
-------  React Components  
-https://mui.com/material-ui/react-button/  
-https://mui.com/material-ui/react-checkbox/  
-https://mui.com/material-ui/react-grid/  
-https://mui.com/material-ui/react-container/  
+    ------  React Components  
+    https://mui.com/material-ui/react-button/  
+    https://mui.com/material-ui/react-checkbox/  
+    https://mui.com/material-ui/react-grid/  
+    https://mui.com/material-ui/react-container/  
 
 
-xs: 0-599 px  
-sm: 600px – 959px  
-md: 960px – 1279px  
-lg: 1280 – 1919px  
-xl: 1920px+  
+    xs: 0-599 px  
+    sm: 600px – 959px  
+    md: 960px – 1279px  
+    lg: 1280 – 1919px  
+    xl: 1920px+  
