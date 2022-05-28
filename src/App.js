@@ -57,6 +57,7 @@ function App() {
   const [useNumericCharacters, setUseNumericCharacters] = useState(true);
   const [passwordLength, setPasswordLength] = useState(50);
   const [passwordStrength, setPasswordStrength] = useState(100);
+  const [barChartColor,setBarChartColor] = useState("#8884d8");
   const [errorStatus, setErrorStatus] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [charSetsSelected, setCharSetsSelected] = useState(4);
@@ -88,9 +89,16 @@ function App() {
           var passwordStrengthLocal = parseInt(calcPasswordStrength(passwordLength,charSetToUse));
           setPasswordStrength(passwordStrengthLocal);  
       } 
-      if (passwordStrength < 50) {
+      if (passwordStrength < 70) {
+          setBarChartColor(theme.palette.warning.main);
+      }
+      if (passwordStrength >= 70) {
+          setBarChartColor(theme.palette.primary.main);
+      }
+      if (passwordStrength < 30) {
           setErrorStatus(true);
           setErrorMessage("Please choose a stronger password.");
+          setBarChartColor(theme.palette.error.main);
       }  
       else {
           setErrorStatus(false);
@@ -154,7 +162,7 @@ function App() {
                         }
                         {
                         errorStatus &&
-                          <Error errorMessage={errorMessage}/>
+                          <Error errorMessage={errorMessage} bgColor={theme.palette.error.main}/>
                         }
                     </FormGroup>
                     <ResponsiveContainer width="80%" height={70} >
@@ -163,7 +171,7 @@ function App() {
                             layout="vertical" >
                             <XAxis type="number" domain={[0, 100]} tick={false} axisLine={false} label="Strength"/>
                             <YAxis type="category" dataKey="name" tick={false}  axisLine={false}/>
-                            <Bar dataKey={"strength"} fill="#8884d8" name="Password Strength"/>
+                            <Bar dataKey={"strength"} fill={barChartColor} name="Password Strength"/>
                             <Tooltip margin={{ top: 100, right: 0, left: 0, bottom: 0 }}/>
                             
                         </BarChart>

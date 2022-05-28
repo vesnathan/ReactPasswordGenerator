@@ -1,8 +1,10 @@
+
 #errorDiv {
     color: #fff;
     background-color: #ff0000;
-    padding: 20px;
-    margin-top: 25px;
+    padding: 11px 20px;
+    margin-top: 39px;
     font-weight: bold;
     text-align: center;
+    font-size: 82%;
 }

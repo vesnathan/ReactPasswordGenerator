@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { amber, lightGreen } from "@material-ui/core/colors";
+import { amber, lightGreen, red } from "@material-ui/core/colors";
 
 const theme = createTheme({
     palette: {
@@ -10,6 +10,12 @@ const theme = createTheme({
         secondary: {
             main: amber[500],
             contrastText: "#FFFFFF",
+        },
+        error: {
+            main: red[400],
+        },
+        warning: {
+            main: amber[500],
         }
     },
     props: {
