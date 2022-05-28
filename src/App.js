@@ -174,7 +174,7 @@ function App() {
                             <XAxis type="number" domain={[0, 100]} tick={false} axisLine={false} label="Strength"/>
                             <YAxis type="category" dataKey="name" tick={false}  axisLine={false}  width={0} />
                             <Bar dataKey={"strength"} fill={barChartColor} name="Password Strength"/>
-                            <Tooltip margin={{ top: 100, right: 0, left: 0, bottom: 0 }}/>
+                            
                             
                         </BarChart>
                     </ResponsiveContainer>
