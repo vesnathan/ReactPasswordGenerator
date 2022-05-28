@@ -143,11 +143,11 @@ function App() {
               </Grid>
             </Grid>
             <Grid container justifyContent="center">
-              <Grid item  xs={10} sm={8}>
+              <Grid item  xs={10} sm={8} className="testing">
                   {
                     generatedPassword === "" &&
                 <>
-                    <FormGroup>
+                    <FormGroup className="marginBottom">
                         <Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}} gutterBottom>Password Length: {passwordLength}</Typography>
                         <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="off" onChange={handleSliderChange} min={8} max={128} sx={{mb: 5}} />
                         <FormControlLabel control={<Checkbox defaultChecked id="useUpperCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Upper Case Characters</Typography>}/>
@@ -165,12 +165,14 @@ function App() {
                           <Error errorMessage={errorMessage} bgColor={theme.palette.error.main}/>
                         }
                     </FormGroup>
-                    <ResponsiveContainer width="80%" height={70} >
+                    <ResponsiveContainer width="100%" height={70} >
                         <BarChart 
                             data={data} 
-                            layout="vertical" >
+                            layout="vertical" 
+                            
+                             >
                             <XAxis type="number" domain={[0, 100]} tick={false} axisLine={false} label="Strength"/>
-                            <YAxis type="category" dataKey="name" tick={false}  axisLine={false}/>
+                            <YAxis type="category" dataKey="name" tick={false}  axisLine={false}  width={0} />
                             <Bar dataKey={"strength"} fill={barChartColor} name="Password Strength"/>
                             <Tooltip margin={{ top: 100, right: 0, left: 0, bottom: 0 }}/>
                             
