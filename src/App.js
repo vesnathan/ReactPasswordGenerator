@@ -14,6 +14,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 
+// Rechart Components
+import { BarChart, XAxis, YAxis, ResponsiveContainer, Tooltip,  Bar } from 'recharts';
+
+
+
 
 // Custom Components
 import Header from "./components/header/header.component.js";
@@ -37,6 +42,12 @@ function generatePassword(useUpperCharacters,useLowerCharacters,useSpecialCharac
     return generatedPassword;
 }
 
+function calcPasswordStrength(passwordLength,charSetToUse) {
+    //  E = L * log2(R)
+    var passwordStrength = passwordLength * Math.log2(charSetToUse.length) ;
+    return passwordStrength;
+}
+
 
 function App() {
 
@@ -45,23 +56,44 @@ function App() {
   const [useSpecialCharacters, setUseSpecialCharacters] = useState(true);
   const [useNumericCharacters, setUseNumericCharacters] = useState(true);
   const [passwordLength, setPasswordLength] = useState(50);
+  const [passwordStrength, setPasswordStrength] = useState(100);
   const [errorStatus, setErrorStatus] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [charSetsSelected, setCharSetsSelected] = useState(4);
   const [generatedPassword, setGeneratedPassword] = useState("");
   const [generatedPaswordDisplayClassName, setGeneratedPaswordDisplayClassName] = useState("");
 
+  const upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+  const lowerCharacters = "abcdefghijklmnopqrstuvwxyz"; 
+  const specialCharacters = "\"!”#$%&’()*+,-./:;<=>?@[\\]^_`{|}~"; 
+  const numericCharacters = "0123456789"; 
 
-  useEffect(() => {     
-      if (charSetsSelected < 2) {
+  // used for the password strength bar graph
+  const data = [
+    {
+      "strength": passwordStrength
+    }
+  ]
+
+  useEffect(() => {  
+      var charSetToUse = "";
+      if (useUpperCharacters) { charSetToUse += upperCharacters}; 
+      if (useLowerCharacters) { charSetToUse += lowerCharacters}; 
+      if (useSpecialCharacters) { charSetToUse += specialCharacters}; 
+      if (useNumericCharacters) { charSetToUse += numericCharacters}; 
+      var passwordStrength = parseInt(calcPasswordStrength(passwordLength,charSetToUse));
+      setPasswordStrength(passwordStrength);   
+      if (passwordStrength < 50) {
           setErrorStatus(true);
-          setErrorMessage("Please choose at least 2 character sets.");
+          setErrorMessage("Please choose a stronger password.");
       }  
       else {
           setErrorStatus(false);
           setErrorMessage("");
       }
   });
+
+
   const handleCheckboxChange = (event) => {
       (event.target.checked) ? setCharSetsSelected(charSetsSelected + 1) : setCharSetsSelected(charSetsSelected - 1);
       switch (event.target.id) {
@@ -101,7 +133,7 @@ function App() {
               <Grid item  xs={10} sm={8}>
                   {
                     generatedPassword === "" &&
-                
+                <>
                     <FormGroup>
                         <Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}} gutterBottom>Password Length: {passwordLength}</Typography>
                         <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="off" onChange={handleSliderChange} min={8} max={128} sx={{mb: 5}} />
@@ -109,6 +141,8 @@ function App() {
                         <FormControlLabel control={<Checkbox defaultChecked id="useLowerCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Lower Case Characters</Typography>}/>
                         <FormControlLabel control={<Checkbox defaultChecked id="useSpecialCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Special Case Charaxters</Typography>}/>
                         <FormControlLabel control={<Checkbox defaultChecked id="useNumericCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Numeric Case Characters</Typography>}/>
+                        
+                        
                         {
                         !errorStatus &&
                         < Button id="generatePasswordButton" variant="contained" sx={{mt: 5}} color="primary" onClick={() => setGeneratedPassword(generatePassword(useUpperCharacters,useLowerCharacters,useSpecialCharacters,useNumericCharacters,passwordLength))}>GENERATE PASSWORD</Button>
@@ -118,6 +152,18 @@ function App() {
                           <Error errorMessage={errorMessage}/>
                         }
                     </FormGroup>
+                    <ResponsiveContainer width="80%" height={70} >
+                        <BarChart 
+                            data={data} 
+                            layout="vertical" >
+                            <XAxis type="number" domain={[0, 100]} tick={false} axisLine={false} label="Strength"/>
+                            <YAxis type="category" dataKey="name" tick={false}  axisLine={false}/>
+                            <Bar dataKey={"strength"} fill="#8884d8" name="Password Strength"/>
+                            <Tooltip margin={{ top: 100, right: 0, left: 0, bottom: 0 }}/>
+                            
+                        </BarChart>
+                    </ResponsiveContainer>
+                </>
                   } 
                   {
                     generatedPassword !== "" &&

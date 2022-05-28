@@ -33,6 +33,12 @@
     import '@fontsource/roboto/500.css';  
     import '@fontsource/roboto/700.css';  
   
+    ------ recharts    https://github.com/recharts/recharts  
+      
+    This is used for password strength barchart  
+      
+    npm install recharts  
+  
     
 
 
