@@ -81,8 +81,13 @@ function App() {
       if (useLowerCharacters) { charSetToUse += lowerCharacters}; 
       if (useSpecialCharacters) { charSetToUse += specialCharacters}; 
       if (useNumericCharacters) { charSetToUse += numericCharacters}; 
-      var passwordStrength = parseInt(calcPasswordStrength(passwordLength,charSetToUse));
-      setPasswordStrength(passwordStrength);   
+      if (charSetToUse.length === 0) {
+        setPasswordStrength(0);
+      }
+      else {
+          var passwordStrengthLocal = parseInt(calcPasswordStrength(passwordLength,charSetToUse));
+          setPasswordStrength(passwordStrengthLocal);  
+      } 
       if (passwordStrength < 50) {
           setErrorStatus(true);
           setErrorMessage("Please choose a stronger password.");
