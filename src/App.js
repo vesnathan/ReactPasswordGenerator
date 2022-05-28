@@ -89,13 +89,13 @@ function App() {
           var passwordStrengthLocal = parseInt(calcPasswordStrength(passwordLength,charSetToUse));
           setPasswordStrength(passwordStrengthLocal);  
       } 
-      if (passwordStrength < 70) {
+      if (passwordStrength < 80) {
           setBarChartColor(theme.palette.warning.main);
       }
-      if (passwordStrength >= 70) {
+      if (passwordStrength >= 80) {
           setBarChartColor(theme.palette.primary.main);
       }
-      if (passwordStrength < 30) {
+      if (passwordStrength < 50) {
           setErrorStatus(true);
           setErrorMessage("Please choose a stronger password.");
           setBarChartColor(theme.palette.error.main);
