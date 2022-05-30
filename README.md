@@ -37,7 +37,7 @@
       
     This is used for password strength barchart  
       
-    npm install recharts  
+    npm install recharts --legacy-peer-deps
   
     
 

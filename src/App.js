@@ -76,6 +76,8 @@ function App() {
     }
   ]
 
+
+  // useEffect to change the password strength bar, and write any errors based on select boxes/password length
   useEffect(() => {  
       var charSetToUse = "";
       if (useUpperCharacters) { charSetToUse += upperCharacters}; 
@@ -104,7 +106,7 @@ function App() {
           setErrorStatus(false);
           setErrorMessage("");
       }
-  });
+  },[useUpperCharacters, useLowerCharacters, useSpecialCharacters, useNumericCharacters, passwordLength]);
 
 
   const handleCheckboxChange = (event) => {
@@ -146,21 +148,21 @@ function App() {
               <Grid item  xs={10} sm={8} className="testing">
                   {
                     generatedPassword === "" &&
-                <>
+                    <>
                     <FormGroup className="marginBottom">
                         <Typography sx={{fontSize: {md: 20,sm: 15,xs: 14}}} gutterBottom>Password Length: {passwordLength}</Typography>
                         <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="off" onChange={handleSliderChange} min={8} max={128} sx={{mb: 5}} />
                         <FormControlLabel control={<Checkbox defaultChecked id="useUpperCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Upper Case Characters</Typography>}/>
                         <FormControlLabel control={<Checkbox defaultChecked id="useLowerCharacters"   onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Lower Case Characters</Typography>}/>
                         <FormControlLabel control={<Checkbox defaultChecked id="useSpecialCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Special Case Charaxters</Typography>}/>
-                        <FormControlLabel control={<Checkbox defaultChecked id="useNumericCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Numeric Case Characters</Typography>}/>
-                        
-                        
+                        <FormControlLabel control={<Checkbox defaultChecked id="useNumericCharacters" onChange={handleCheckboxChange}/>} label={<Typography sx={{fontSize: {md: 20,sm: 15,xs: 12}}}>Use Numeric Case Characters</Typography>}/> 
                         {
+                        // if there is no error warnings, render the button
                         !errorStatus &&
                         < Button id="generatePasswordButton" variant="contained" sx={{mt: 5}} color="primary" onClick={() => setGeneratedPassword(generatePassword(useUpperCharacters,useLowerCharacters,useSpecialCharacters,useNumericCharacters,passwordLength))}>GENERATE PASSWORD</Button>
                         }
                         {
+                        // if there is error warnings, render the error component
                         errorStatus &&
                           <Error errorMessage={errorMessage} bgColor={theme.palette.error.main}/>
                         }
@@ -168,17 +170,13 @@ function App() {
                     <ResponsiveContainer width="100%" height={70} >
                         <BarChart 
                             data={data} 
-                            layout="vertical" 
-                            
-                             >
+                            layout="vertical">
                             <XAxis type="number" domain={[0, 100]} tick={false} axisLine={false} label="Strength"/>
                             <YAxis type="category" dataKey="name" tick={false}  axisLine={false}  width={0} />
-                            <Bar dataKey={"strength"} fill={barChartColor} name="Password Strength"/>
-                            
-                            
+                            <Bar dataKey={"strength"} fill={barChartColor} name="Password Strength"/>    
                         </BarChart>
                     </ResponsiveContainer>
-                </>
+                    </>
                   } 
                   {
                     generatedPassword !== "" &&
