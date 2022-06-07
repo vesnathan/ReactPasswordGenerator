@@ -36,7 +36,7 @@ function generatePassword(useUpperCharacters,useLowerCharacters,useSpecialCharac
     if (useNumericCharacters) { charSetToUse += "0123456789"; }
 
     for (var i = 0; i < passwordLength; i++) {
-      generatedPassword += charSetToUse.charAt(Math.floor(Math.random() * charSetToUse.length));
+        generatedPassword += charSetToUse.charAt(Math.floor(Math.random() * charSetToUse.length));
     }
 
     return generatedPassword;
@@ -106,6 +106,8 @@ function App() {
           setErrorStatus(false);
           setErrorMessage("");
       }
+      console.log("passwordStrength",passwordStrength);
+      console.log("passwordLength",passwordLength);
   },[useUpperCharacters, useLowerCharacters, useSpecialCharacters, useNumericCharacters, passwordLength]);
 
 
